@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For my cutieee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top left, #ffe0f0, #ffd6e0, #ffecf2, #fff0f8);
+      animation: romanticPulse 10s infinite alternate;
+      position: relative;
+    }
+
+    @keyframes romanticPulse {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .question {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #d63384;
+      font-family: 'Pacifico', cursive;
+      position: relative;
+      z-index: 1;
+      text-shadow: 1px 1px 4px #fff0f8;
+    }
+
+    .buttons {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      z-index: 1;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.4rem;
+      border: none;
+      border-radius: 50px;
+      position: absolute;
+      transition: top 0.15s ease, left 0.15s ease, transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #ffb6c1;
+      color: white;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    #yes:hover {
+      background-color: #ff69b4;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    #no {
+      background-color: #ff6961;
+      color: white;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    #card {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+      border: 4px dashed #ff69b4;
+      padding: 40px 50px;
+      border-radius: 30px;
+      animation: slideInCard 0.8s ease forwards;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      max-width: 90%;
+      position: relative;
+      z-index: 1;
+    }
+
+    #card h1 {
+      font-size: 2.4rem;
+      margin: 0;
+      color: #d63384;
+    }
+
+    #typewriter-text {
+      margin-top: 10px;
+      font-size: 1.4rem;
+      color: #ff1493;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #ff69b4;
+      width: 0;
+      animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    .cat-emoji {
+      font-size: 4rem;
+      margin-top: 25px;
+      animation: winkBounce 2s infinite;
+    }
+
+    .hearts {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      color: #ff69b4;
+      animation: floatHearts 2s infinite ease-in-out;
+    }
+
+    @keyframes slideInCard {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes winkBounce {
+      0%, 100% {
+        transform: scale(1) rotate(0deg);
+      }
+      25% {
+        transform: scale(1.1) rotate(5deg);
+      }
+      50% {
+        transform: scale(1) rotate(-5deg);
+      }
+      75% {
+        transform: scale(1.05) rotate(3deg);
+      }
+    }
+
+    @keyframes floatHearts {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #ff69b4; }
+    }
+
+    .confetti {
+      position: absolute;
+      font-size: 1.5rem;
+      pointer-events: none;
+      animation: fall 2s linear forwards;
+      color: #ff69b4;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="question">Would you like to go on a date with me cutieee? 💘</div>
+  <div class="buttons">
+    <button class="btn" id="yes">Yes 💖</button>
+    <button class="btn" id="no">No 😅</button>
+  </div>
+
+  <div id="card">
+    <div class="hearts">💞 💖 💞</div>
+    <h1>Your Magical Date Pass</h1>
+    <div id="typewriter-text">Reserved for: You & Me 💕</div>
+    <div class="cat-emoji">🐱</div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const card = document.getElementById("card");
+
+    let posX = 300;
+    let posY = 100;
+
+    noBtn.style.left = `${posX}px`;
+    noBtn.style.top = `${posY}px`;
+
+    document.addEventListener("mousemove", (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      const rect = noBtn.getBoundingClientRect();
+      const btnCenterX = rect.left + rect.width / 2;
+      const btnCenterY = rect.top + rect.height / 2;
+
+      const dx = mouseX - btnCenterX;
+      const dy = mouseY - btnCenterY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      const buffer = 120;
+      const step = 130;
+
+      if (distance < buffer) {
+        const angle = Math.atan2(dy, dx);
+        let moveX = -Math.cos(angle) * step;
+        let moveY = -Math.sin(angle) * step;
+
+        posX += moveX;
+        posY += moveY;
+
+        // Keep within bounds
+        posX = Math.max(0, Math.min(window.innerWidth - rect.width, posX));
+        posY = Math.max(0, Math.min(window.innerHeight - rect.height, posY));
+
+        noBtn.style.left = `${posX}px`;
+        noBtn.style.top = `${posY}px`;
+      }
+    });
+
+    function launchConfettiHearts(count = 40) {
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('confetti');
+        heart.textContent = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "-10px";
+        heart.style.fontSize = `${1 + Math.random() * 1.5}rem`;
+        heart.style.animationDuration = `${1 + Math.random() * 2}s`;
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+      }
+    }
+
+    yesBtn.addEventListener("click", () => {
+      document.querySelector(".question").style.display = "none";
+      document.querySelector(".buttons").style.display = "none";
+      card.style.display = "flex";
+      launchConfettiHearts();
+    });
+  </script>
+</body>
+</html>
